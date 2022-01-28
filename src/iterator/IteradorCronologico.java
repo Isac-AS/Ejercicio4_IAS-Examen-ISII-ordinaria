@@ -17,7 +17,10 @@ public class IteradorCronologico implements iterator{
 
     @Override
     public String getNext() {
-        return coleccion.get(estadoIteracion).toString();
+        // Falta la implementación de toString del elemento histórico (no queda tiempo procedo a la entrega)
+        String result = coleccion.get(estadoIteracion).toString();
+        estadoIteracion++;
+        return result;
     }
 
     @Override

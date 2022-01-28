@@ -8,18 +8,18 @@ import modelo.SincronicidadEventosHistoricos;
 public class CatalogoCulturales implements Catalogo{
     
     private ArrayList<SincronicidadEventosHistoricos> eventos;
+    iterator iterador;
 
     public CatalogoCulturales() {
         this.eventos = new ArrayList<>();
     }
 
     @Override
-    public iterator crearIterador(String tipo) {
+    public void crearIterador(String tipo) {
         switch (tipo) {
             case "cronologico" :
-                return new IteradorCronologico(this);
+                iterador = new IteradorCronologico(this);
         }
-        return null;
     }
 
     @Override
@@ -28,8 +28,8 @@ public class CatalogoCulturales implements Catalogo{
     }
 
     @Override
-    public void mostrarTrayectoria(String tipo) {
-        iterator iterador = this.crearIterador(tipo);
+    public void mostrarTrayectoria() {
+        
         while (iterador.hasMore()) {
             System.out.println(iterador.getNext());
         }

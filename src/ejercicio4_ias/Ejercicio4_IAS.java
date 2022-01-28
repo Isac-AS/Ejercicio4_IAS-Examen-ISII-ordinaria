@@ -14,6 +14,15 @@ public class Ejercicio4_IAS {
         SincronicidadEventosHistoricos evento1 = new EventoHistorico("canarias", "nombre1", "d1", "1999-01-01", null);
         SincronicidadEventosHistoricos evento2 = new EventoHistorico("canarias", "nombre2", "d2", "1999-01-01", null);
         
+        catalogoEventosCulturales.agregarEvento(evento0);
+        catalogoEventosCulturales.agregarEvento(evento1);
+        catalogoEventosCulturales.agregarEvento(evento2);
+        
+        // Caso de uso Definir un Evento Histórico con Trayectoria de Expansión
+        catalogoEventosCulturales.crearIterador("cronologico");
+        
+        // Segundo caso de uso
+        catalogoEventosCulturales.mostrarTrayectoria();
         
     }
     
